@@ -1,104 +1,141 @@
-/* Reset styles */
+/* ===== Reset Styles ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Body Style ===== */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(0deg,rgba(58, 232, 252, 0.81) 10%,rgba(174, 241, 223, 0.81) 40%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(0deg, rgba(58, 232, 252, 0.81) 10%, rgba(174, 241, 223, 0.81) 40%);
     height: 100vh;
-    overflow: hidden;
-}
-
-/* Profile container */
-.profile-container {
-    width: 100%;
-    max-width: 400px;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    animation: slide-in 0.8s ease-out;
-    margin-top: 5%;
-    
-}
-
-/* Profile card */
-.card {
-    text-align: center;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-.profile-photo {
-    margin: 20px auto;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+/* ===== Profile Container ===== */
+.profile-container {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    animation: fade-in 1s ease-in-out;
+    animation: slide-in 0.8s ease-out;
 }
 
+/* ===== Profile Card ===== */
+.card {
+    text-align: center;
+    padding: 30px 25px;
+}
+
+/* ===== Profile Image ===== */
+.profile-photo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    animation: fade-in 1s ease-in-out;
+}
 .profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* ===== Text Info ===== */
 .username {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+    font-size: 1.9em;
+    font-weight: 600;
+    color: #222;
+    margin: 12px 0 6px;
     animation: fade-in-down 1.2s ease-in-out;
 }
-
 .email {
     font-size: 1em;
     color: #666;
-    margin-bottom: 20px;
     animation: fade-in-down 1.4s ease-in-out;
 }
 
+/* ===== Button Styles ===== */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ffffff;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    color: #fff;
     background-color: #007bff;
     border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1em;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
-
 .btn:hover {
     background-color: #0056b3;
     transform: scale(1.05);
 }
 
+/* ===== Upload Form ===== */
 .upload-form {
-    margin-top: 20px;
+    margin-top: 25px;
 }
-
 .file-label {
     display: block;
     margin-bottom: 10px;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 0.95em;
+    color: #555;
 }
-
 .upload-btn {
     width: 100%;
+    padding: 10px;
 }
 
-/* Animations */
+/* ===== Header and Navigation ===== */
+header {
+    width: 100%;
+    background: linear-gradient(180deg, #f2f2f2 0%, #1adff5 100%);
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 1.8em;
+    color: #1a1a1a;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 14px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: rgb(34, 201, 209);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+nav a:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.1);
+}
+
+/* ===== Animations ===== */
 @keyframes slide-in {
     from {
-        transform: translateY(-50px);
+        transform: translateY(-40px);
         opacity: 0;
     }
     to {
@@ -106,7 +143,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -115,7 +151,6 @@ body {
         opacity: 1;
     }
 }
-
 @keyframes fade-in-down {
     from {
         transform: translateY(-20px);
@@ -126,50 +161,80 @@ body {
         opacity: 1;
     }
 }
+.user-posts {
+    margin-top: 40px;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+}
 
-header {
-    background: linear-gradient(180deg, #f2f2f2 0%, #1adff5 100%);
-    
+.user-posts h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-card {
+    background: #ffffff;
+    border-left: 6px solid #1adff5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fade-in 1s ease-in-out;
+}
+
+.post-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.post-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 6px solid #009688;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.post-card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #333;
+}
+
+.post-card p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.delete-btn {
+    background-color: #e53935;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-nav a {
-color: #000000;
-text-decoration: none;
-margin: 0 15px;
-font-size: 16px;
-border-radius: 10px;
-border: 2px solid black;
-padding: 7px;
-background-color:rgb(34, 201, 209);
-animation-delay: 1s;
-transition: transform 0.3s ease, background-color 0.3s ease;
-display: inline-block;
-}
-nav{
-margin-top:10px;
-}
-nav a:hover{
-background-color: #f8f8f8;
-transform: scale(1.1);
-
-}
-
-header {
-    background: linear-gradient(180deg, #f2f2f2 0%, #1adff5 100%);
-    
-    color: white;
-    padding: 10px 20px;
-}
-header h1{
-    text-align: center;
-    color:rgb(30, 34, 38);
-    
-}
-a{
-    text-decoration: none;;
+.delete-btn:hover {
+    background-color: #c62828;
 }
 
 
+.post-meta {
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 10px;
+}
 
+.no-posts {
+    font-style: italic;
+    color: #666;
+}
